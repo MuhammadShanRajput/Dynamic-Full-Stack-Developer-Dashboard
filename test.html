@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CKEditor 5 - Quick start CDN</title>
+		<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.2.1/ckeditor5.css">
+		<style>
+			.main-container {
+				width: 795px;
+				
+				margin-left: auto;
+				margin-right: auto;
+			}
+			body {
+				background-color: #f0f0f0;
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+			img{
+				mix-blend-mode: color-burn;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+
+		<img src="/public/images/apple_logo_1988.webp" alt="" srcset="">
+		<div class="main-container">
+			<div id="editor">
+				<p>Hello from CKEditor 5!</p>
+			</div>
+		</div>
+		
+		<a href="/test2.html" style="background-color: aqua;">clik</a>
+
+
+		<script src="https://cdn.ckeditor.com/ckeditor5/44.2.1/ckeditor5.umd.js"></script>
+		<script>
+			const {
+				ClassicEditor,
+				Essentials,
+				Paragraph,
+				Bold,
+				Italic,
+				Font
+			} = CKEDITOR;
+			// Create a free account and get <YOUR_LICENSE_KEY>
+			// https://portal.ckeditor.com/checkout?plan=free
+			ClassicEditor
+				.create( document.querySelector( '#editor' ), {
+					licenseKey: '<YOUR_LICENSE_KEY>',
+					plugins: [ Essentials, Paragraph, Bold, Italic, Font ],
+					toolbar: [
+						'undo', 'redo', '|', 'bold', 'italic', '|',
+						'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+					]
+				} )
+				.then( editor => {
+					window.editor = editor;
+				} )
+				.catch( error => {
+					console.error( error );
+				} );
+		</script>
+
+<script >	
+	window.history.forward()
+
+	</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Add</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Website </h1>
+    <form id="addUserForm">
+        <h3> Enter the your details : </h3>
+        Name :<br><input type="text" name="nameView" id="nameView" placeholder="Enter your name"><br><br>
+        Email :<br><input type="email" name="mailView" id="mailView" placeholder="Enter your email"><br><br>
+        Mobile :<br><input type="number" name="mobileView" id="mobileView"
+            placeholder="Enter your mobile number"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+
+        let nameView = document.getElementById('nameView');
+        let mailView = document.getElementById('mailView');
+        let mobileView = document.getElementById('mobileView');
+
+      
+
+        const $form = $('#addUserForm')
+
+
+        $form.on('submit', submitHandler)
+
+        function submitHandler(e) {
+            e.preventDefault()
+
+            $.ajax({
+                url: '/addUserFormSubmit',
+                type: 'POST',
+                data: $form.serialize()
+            }).done(response => {
+                console.log(response)
+            })
+        }
+    </script>
+</body>
+
+</html>
